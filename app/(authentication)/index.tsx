@@ -1,15 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function Index() {
+export default function index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>This is from the authentication</Text>
+    <View>
+      <Text>This is from the authentication screen</Text>
     </View>
   );
 }

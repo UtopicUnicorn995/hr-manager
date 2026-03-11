@@ -3,9 +3,9 @@ import { Text, View } from "react-native";
 
 export default function Index() {
   const user = {
-    role: "admin",
+    role: "employee",
   };
-  console.log("I am inside the index2");
+  console.log("I am inside the index2 asd");
 
   if (!user.role) {
     console.log("authentication");
