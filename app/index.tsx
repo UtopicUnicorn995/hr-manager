@@ -1,34 +1,20 @@
+import { useStore } from "@/utilities/useStore";
 import { Redirect } from "expo-router";
-import { Text, View } from "react-native";
 
 export default function Index() {
-  const user = {
-    role: "employee",
-  };
-  console.log("I am inside the index2 asd");
+  const user = useStore((state) => state.user);
 
-  if (!user.role) {
-    console.log("authentication");
-    return <Redirect href="/(authentication)" />;
+  console.log("user shit", user);
+
+  if (!user) {
+    return <Redirect href="/SignIn" />;
   }
 
   if (user.role === "admin") {
-    console.log("admin");
-    return (
-      <View>
-        <Text>THere are shits happening here</Text>
-      </View>
-    );
+    return <Redirect href="/AdminDashboard" />;
   }
 
   if (user.role === "employee") {
-    console.log("employee");
-    return <Redirect href="/(employee)" />;
+    return <Redirect href="/EmployeeDashboard" />;
   }
-
-  return (
-    <View>
-      <Text>THere are shits happening here</Text>
-    </View>
-  );
 }
